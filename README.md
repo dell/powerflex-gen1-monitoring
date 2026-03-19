@@ -255,6 +255,8 @@ Pre-built dashboards are available in the `example-grafana-dashboards/` director
 ├── siocli.py                           # PowerFlex metrics collection script
 ├── siometrics.py                       # Metrics formatting utilities
 ├── sio_sdk/                            # PowerFlex SDK module
+│   ├── __init__.py                     # SDK initialization and collection functions
+│   └── SioSdk.py                       # REST API client and authentication
 ├── querySelectedStatistics.json        # Statistics query configuration
 ├── example-telegraf-powerflex-config/  # Telegraf configuration examples
 │   └── powerflex-telegraf-influxdb.conf
