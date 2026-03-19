@@ -121,7 +121,8 @@ Copy the provided Telegraf configuration:
 cp /var/local/telegraf-powerflex/example-telegraf-powerflex-config/powerflex-telegraf-influxdb.conf /etc/telegraf/telegraf.d/
 ```
 
-For monitoring multiple clusters, update the commands section in `/etc/telegraf/telegraf.d/powerflex-telegraf-influxdb.conf`:
+For monitoring multiple clusters, add a second (or third) entry in the `clusters.yaml` file.
+Then update the commands section in `/etc/telegraf/telegraf.d/powerflex-telegraf-influxdb.conf`:
 
 ```toml
 [[inputs.exec]]
@@ -248,19 +249,18 @@ Pre-built dashboards are available in the `example-grafana-dashboards/` director
 /var/local/telegraf-powerflex/
 ├── README.md                           # This file
 ├── LICENSE                             # Apache 2.0 License
-├── OS_PACKAGE_SBOM.txt                 # Software Bill of Materials for OS packages
 ├── THIRD_PARTY_LICENSES                # Third-party license information
 ├── clusters.yaml                       # Your cluster information (you must create this; example provided in clusters_example.yaml)
 ├── clusters_example.yaml               # Example cluster configuration
-├── siocli.py                          # PowerFlex metrics collection script
-├── siometrics.py                      # Metrics formatting utilities
-├── sio_sdk/                           # PowerFlex SDK module
-├── querySelectedStatistics.json       # Statistics query configuration
-├── example-telegraf-powerflex-config/ # Telegraf configuration examples
+├── siocli.py                           # PowerFlex metrics collection script
+├── siometrics.py                       # Metrics formatting utilities
+├── sio_sdk/                            # PowerFlex SDK module
+├── querySelectedStatistics.json        # Statistics query configuration
+├── example-telegraf-powerflex-config/  # Telegraf configuration examples
 │   └── powerflex-telegraf-influxdb.conf
-├── example-influxdbv1-config/         # InfluxDB configuration examples
+├── example-influxdbv1-config/          # InfluxDB configuration examples
 │   └── influxdb.conf
-├── example-grafana-config/            # Grafana configuration examples
+├── example-grafana-config/             # Grafana configuration examples
 │   ├── grafana.ini
 │   ├── powerflex.crt
 │   └── powerflex.key
